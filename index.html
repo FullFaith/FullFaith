@@ -175,6 +175,9 @@ td small{display:block;color:var(--muted);font-size:.9rem;line-height:1.5}
 .note p{margin:0}
 
 /* about, support, contact */
+.legal h3{margin:34px 0 10px;font-size:1.1rem;color:var(--ink)}.legal p,.legal li{font-size:1rem;line-height:1.75;color:var(--muted)}.legal p{max-width:42em}
+.legal ul{margin:0 0 18px;padding-left:1.2em;max-width:42em}.legal li{margin:0 0 8px}.legal li b{color:var(--ink);font-weight:500}.legal .upd{font-size:.88rem;margin:-18px 0 26px}
+
 .xo{position:relative;display:inline-block}.xo::after{content:"";position:absolute;left:-3%;right:-3%;top:54%;height:.07em;background:var(--ice);box-shadow:0 0 14px rgba(232,165,93,.7);transform-origin:left;animation:strike .55s cubic-bezier(.2,.7,.2,1) forwards}
 @keyframes strike{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 
@@ -209,9 +212,10 @@ footer::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;back
 .foot .r{text-align:right;line-height:1.7}
 .foot .r a{color:var(--ice);text-decoration:none;display:block;font-size:1rem}
 .foot .r a:hover{text-decoration:underline}
+.foot .r .fl{display:flex;justify-content:flex-end;gap:16px;margin-top:2px}.foot .r .fl a{display:inline;font-size:.78rem;color:var(--muted)}.foot .r .fl a:hover{color:var(--ice)}
 .foot .r span{display:block;border-top:1px solid var(--line);margin-top:6px;padding-top:6px;font-size:.8rem}
 
-@media(max-width:620px){.ph.w{grid-column:span 1}.hero .in{padding:48px 24px}.foot{flex-direction:column;align-items:flex-start}.foot .r{text-align:left}.free{padding:32px 24px}}
+@media(max-width:620px){.ph.w{grid-column:span 1}.hero .in{padding:48px 24px}.foot{flex-direction:column;align-items:flex-start}.foot .r{text-align:left}.foot .r .fl{justify-content:flex-start}.free{padding:32px 24px}}
 @media(prefers-reduced-motion:reduce){*,*::after{transition:none!important;animation:none!important}#dust,.streak,body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:8;mix-blend-mode:soft-light;background:linear-gradient(180deg,rgba(255,170,90,.14),transparent 45%,rgba(90,35,0,.32))}
 .scratch{display:none}.btn:hover{transform:none}}
 
@@ -278,7 +282,7 @@ h1 small.under{display:block;font-size:.13em;font-weight:500;letter-spacing:.55e
 <main>
 <section id="home" class="view home"><div class="hero"><div class="vf"></div><div class="hud" aria-hidden="true"><span><b></b>REC <span id="tc">00:00:00:00</span></span><span>24 FPS &nbsp; 4K</span></div><div class="in">
 <div class="pre" id="pre"></div>
-<h1 id="big" class="lit">FULLFAITH</h1>
+<h1 id="big" class="lit" aria-label="FullFaith">FULLFAITH</h1>
 <div class="cta"><a class="btn play" href="#work">See our work</a><a class="btn ghost" href="#contact">Start a project</a></div>
 </div></div></section>
 
@@ -288,7 +292,7 @@ h1 small.under{display:block;font-size:.13em;font-weight:500;letter-spacing:.55e
 <button aria-pressed="true" data-pane="p-vid">Films</button>
 <button aria-pressed="false" data-pane="p-bts">Behind the scenes</button>
 <button aria-pressed="false" data-pane="p-sc">Scenes</button></div>
-<div class="pane on" id="p-vid"><div class="vgrid" id="g-vid"></div></div>
+<div class="pane on" id="p-vid"><div class="vgrid" id="g-vid"></div><p class="fine">Videos play from YouTube when you press play. <a href="#privacy">Privacy and cookies</a></p></div>
 <div class="pane" id="p-bts"><div class="mas" id="g-bts">
 <div class="ph b w cn">On set</div><div class="ph b cn">Filming</div><div class="ph b cn">Crew</div><div class="ph b w cn">Editing</div>
 </div></div>
@@ -341,14 +345,69 @@ h1 small.under{display:block;font-size:.13em;font-weight:500;letter-spacing:.55e
 <p class="fine">FullFaith MTÜ is a registered nonprofit in Estonia.</p>
 </div>
 <div class="bank" id="bank"><h3>Prefer a bank transfer?</h3>
-<div class="row"><span class="k">Name</span><span class="v">JOONAS SIIMEON KAZJAVA</span><button class="cp" data-copy="JOONAS SIIMEON KAZJAVA">Copy</button></div>
-<div class="row"><span class="k">IBAN</span><span class="v">EE21 2200 2220 8577 3635</span><button class="cp" data-copy="EE212200222085773635">Copy</button></div>
-<div class="row"><span class="k">Message</span><span class="v">FullFaith support</span><button class="cp" data-copy="FullFaith support">Copy</button></div>
+<div class="row"><span class="k">Name</span><span class="v">JOONAS SIIMEON KAZJAVA</span><button class="cp" aria-label="Copy account name" data-copy="JOONAS SIIMEON KAZJAVA">Copy</button></div>
+<div class="row"><span class="k">IBAN</span><span class="v">EE21 2200 2220 8577 3635</span><button class="cp" aria-label="Copy IBAN" data-copy="EE212200222085773635">Copy</button></div>
+<div class="row"><span class="k">Message</span><span class="v">FullFaith support</span><button class="cp" aria-label="Copy payment message" data-copy="FullFaith support">Copy</button></div>
+<p class="muted">This account is held by our leader, Joonas Siimeon Kažjava.</p>
 <p class="muted">For monthly giving, open your bank app and set up a standing order (püsikorraldus) to this account.</p></div>
 </div>
 <div class="pv"><h3>Privacy and refunds</h3>
 <p>Card gifts are processed by Stripe, so FullFaith never sees or stores your card details. Stripe passes us your name, email and the gift amount. We use them only to thank you and to keep our records, and we don't sell or share them.</p>
-<p>Monthly givers can cancel any time with the "Manage or cancel your gift" link. If you gave by mistake, email <a href="mailto:fullfaithproduction@gmail.com">fullfaithproduction@gmail.com</a> and we will sort it out.</p></div>
+<p>Monthly givers can cancel any time with the "Manage or cancel your gift" link. If you gave by mistake, email <a href="mailto:fullfaithproduction@gmail.com">fullfaithproduction@gmail.com</a> and we will sort it out. Full details: <a href="#privacy">Privacy and cookies</a>.</p></div>
+</div></section>
+
+<section id="privacy" class="view"><div class="wrap legal" data-k="Your data">
+<h2>Privacy and cookies</h2>
+<p class="upd">Last updated 8 October 2026</p>
+<p>FullFaith MTÜ (registry code 80677142) is a nonprofit in Estonia. We are responsible for the personal data described on this page. You can reach us at <a href="mailto:fullfaithproduction@gmail.com">fullfaithproduction@gmail.com</a>.</p>
+<h3>The short version</h3>
+<p>We set no cookies, run no analytics and show no ads. We only keep what we need to reply to you, thank you for a gift and keep our accounts.</p>
+<h3>What we keep and why</h3>
+<ul>
+<li><b>Emails and messages.</b> If you write to us, we keep your name, email and what you tell us, so we can reply and run the project. We keep them while we work together and for a reasonable time afterwards, then delete them.</li>
+<li><b>Card gifts.</b> Stripe processes the payment, and we never see your card details. Stripe gives us your name, email, the amount and the date. We use them to thank you and to keep accounting records, which Estonian law requires us to keep for several years.</li>
+<li><b>Bank gifts.</b> Your bank shows us your name, account number, the amount and your message. We use them in the same way.</li>
+<li><b>Paid video work.</b> For clients we keep contact details, invoices and project files for the project and for our accounts.</li>
+</ul>
+<p>We do this to answer you, to carry out agreements, to follow accounting law, and because it is how a small nonprofit has to run.</p>
+<h3>Other companies that see your visit</h3>
+<p>When you open this site, these services receive your IP address and browser details, as any website host or font provider does:</p>
+<ul>
+<li><b>GitHub</b> hosts this site. <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Their privacy statement</a></li>
+<li><b>Google Fonts</b> loads our typefaces. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a></li>
+<li><b>YouTube</b> supplies the thumbnails for our films. Videos play in YouTube's privacy-enhanced mode and only after you press play, but YouTube may still collect data once a video plays.</li>
+</ul>
+<p>If you choose to give, you leave this site for Stripe (<a href="https://stripe.com/privacy" target="_blank" rel="noopener">privacy policy</a>) or DonationBox, and their own policies apply.</p>
+<h3>Cookies</h3>
+<p>This site sets no cookies and stores nothing in your browser. Stripe, DonationBox and YouTube may set their own cookies when you use them.</p>
+<h3>Photos and films</h3>
+<p>If you appear in one of our films or photos and want it removed, email us and we will remove it.</p>
+<h3>Your rights</h3>
+<p>You can ask to see, correct or delete your data, to limit how we use it, or to object to it. Email us and we will answer within a month. If you are unhappy with how we handled your data, you can complain to the Estonian Data Protection Inspectorate (Andmekaitse Inspektsioon, <a href="https://www.aki.ee" target="_blank" rel="noopener">aki.ee</a>).</p>
+</div></section>
+
+<section id="terms" class="view"><div class="wrap legal" data-k="How we work">
+<h2>Terms</h2>
+<p class="upd">Last updated 8 October 2026</p>
+<p>These terms cover work by FullFaith MTÜ (registry code 80677142). We keep them short and plain. We agree the details of each project with you in writing before we start, and email counts as writing. If a quote says something different, the quote wins for that project.</p>
+<h3>Free and paid work</h3>
+<p>Our work is free for projects, events and churches that connect directly to Christianity. That means a church, or someone who uses the work to spread the gospel or the money to fund a church. A normal business is not free, even if it is run by Christians. If you are not sure which side you fall on, ask us.</p>
+<p>We decide whether a project is free, and we can say no to a free project. On a free project we do not set a price. You are welcome to give a donation instead. We do ask you to cover anything we have to buy or pay for to make the project work, such as transport, props or a music licence.</p>
+<h3>Quotes and payment</h3>
+<p>Paid work starts with a written quote. The prices on the Services page are starting prices, and the quote gives the real one. Payment is usually after delivery. We send an invoice when the work is delivered, and it shows the due date. If a project needs something different, the quote says so.</p>
+<h3>How long it takes</h3>
+<p>A simple project usually takes about a week. A harder one takes a couple of weeks, and the biggest can take up to a month. We agree a date with you before we start.</p>
+<h3>Changes</h3>
+<p>Each quote or agreement says how many rounds of changes are included. If you need more, we will talk it through before doing the extra work.</p>
+<h3>Ownership and showing the work</h3>
+<p>We talk about who owns the finished video with every client before we start. We usually hope to keep the right to show the work on our website and social media. If you ask for the raw footage, you can have it.</p>
+<h3>Music and your material</h3>
+<p>If a project needs licensed music, the licence is paid for by the client. If you give us music, photos or other material, you are responsible for having the right to use it.</p>
+<h3>Cancelling</h3>
+<p>If you need to cancel or move a date, tell us as early as you can. If we have already bought or paid for something for your project, we will ask you to cover it.</p>
+<h3>If something goes wrong</h3>
+<p>We would always rather talk it through first. Estonian law applies to these terms. How we handle your personal data is on the <a href="#privacy">privacy page</a>.</p>
+<p>Questions? <a href="mailto:fullfaithproduction@gmail.com">fullfaithproduction@gmail.com</a></p>
 </div></section>
 
 <section id="contact" class="view"><div class="wrap" data-k="Say hello">
@@ -359,10 +418,11 @@ h1 small.under{display:block;font-size:.13em;font-weight:500;letter-spacing:.55e
 <li><a href="https://www.tiktok.com/@FullFaithproduction" target="_blank" rel="noopener">TikTok</a></li>
 <li><a href="https://www.facebook.com/profile.php?id=61570564692993" target="_blank" rel="noopener">Facebook</a></li>
 <li><a href="https://www.youtube.com/@FullFaithproduction" target="_blank" rel="noopener">YouTube</a></li>
+<li><a href="https://www.linkedin.com/company/fullfaithproduction" target="_blank" rel="noopener">LinkedIn</a></li>
 </ul></div></section>
 </main>
 
-<footer><div class="wrap foot"><div class="mark">FULLFAITH</div><div class="r"><a href="mailto:fullfaithproduction@gmail.com">fullfaithproduction@gmail.com</a><span>© 2026 FullFaith MTÜ · Reg. code 80677142</span></div></div></footer>
+<footer><div class="wrap foot"><div class="mark">FULLFAITH</div><div class="r"><a href="mailto:fullfaithproduction@gmail.com">fullfaithproduction@gmail.com</a><div class="fl"><a href="#privacy">Privacy and cookies</a><a href="#terms">Terms</a></div><span>© 2026 FullFaith MTÜ · Reg. code 80677142</span></div></div></footer>
 
 <script>
 (function(){
@@ -383,7 +443,7 @@ var BIG={
 4:"FULL<small>(of hope &amp;)</small>FAITH",
 5:"FULL<small>(of grace &amp;)</small>FAITH",
 6:"FULL<small>(of light &amp;)</small>FAITH",
-8:"FAITHFULL",
+8:"FAITHFULL<small class=\"under\">(FULLFAITH)</small>",
 10:"FULL<small>(assurance of)</small>FAITH",
 11:"FAITHFULL<small class=\"under\">(FULLFAITH)</small>",
 12:"FULL<small>(faith)</small>",
@@ -413,17 +473,15 @@ var L=[
 ["a life",6],["nights",6],
 ["in",10]
 ];
-var last=-1;try{last=parseInt(localStorage.getItem('ff_h'),10)}catch(e){}
-var i;do{i=Math.floor(Math.random()*L.length)}while(i===last&&L.length>1);
-try{localStorage.setItem('ff_h',i)}catch(e){}
+var i=Math.floor(Math.random()*L.length);
 document.getElementById('pre').textContent=L[i][0];
 (function(r){var big=document.getElementById('big');
 if(r[1]!=='S'){big.innerHTML=BIG[r[1]];return}
 var w=r[2],still=false;try{still=window.matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
-if(still){big.innerHTML='FAITHFULL';return}
+if(still){big.innerHTML=BIG[11];return}
 big.innerHTML=w+'FULL';
 setTimeout(function(){big.innerHTML='<span class="xo">'+w+'</span>FULL'},1500);
-setTimeout(function(){big.innerHTML='FAITHFULL'},2500)})(L[i]);
+setTimeout(function(){big.innerHTML=BIG[11]},2500)})(L[i]);
 
 var lits=[],measure=function(){};function cacheLit(){lits=[].slice.call(document.querySelectorAll('.view.on .lit,.view.on .card,.view.on .bank,.view.on .free,.view.on .socials a,.view.on .vid,.view.on .more')).map(function(el){return{el:el,lit:el.classList.contains('lit'),l:0,t:0,w:0,h:0}});measure()}
 
@@ -439,7 +497,7 @@ f.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+v.id+'?autopl
 d.appendChild(b);vg.appendChild(d)});cacheLit();
 var more=document.createElement('div');more.className='more cn';more.textContent='More is cooking.';vg.appendChild(more);
 
-var lbx=document.createElement('div');lbx.className='lb';lbx.innerHTML='<img alt="">';document.body.appendChild(lbx);
+var lbx=document.createElement('div');lbx.className='lb';lbx.innerHTML='<img alt="">';lbx.setAttribute('role','dialog');lbx.setAttribute('aria-modal','true');lbx.setAttribute('aria-label','Enlarged photo, press Escape to close');document.body.appendChild(lbx);
 lbx.onclick=function(){lbx.classList.remove('on')};
 document.addEventListener('keydown',function(e){if(e.key==='Escape')lbx.classList.remove('on')});
 var loaded={};
@@ -447,17 +505,21 @@ function gallery(id,folder){if(loaded[id])return;loaded[id]=1;var el=document.ge
 fetch('https://api.github.com/repos/'+REPO+'/contents/'+folder).then(function(r){return r.ok?r.json():[]}).then(function(list){
 var f=(Array.isArray(list)?list:[]).filter(function(x){return x.type==='file'&&/\.(jpe?g|png|webp|gif|avif|mp4|webm)$/i.test(x.name)}).sort(function(a,b){return a.name.localeCompare(b.name,undefined,{numeric:true})});
 if(!f.length)return;el.innerHTML='';
-f.forEach(function(x){var w=document.createElement('div');w.className='cn';var u=folder+'/'+encodeURIComponent(x.name);
-if(/\.(mp4|webm)$/i.test(x.name))w.innerHTML='<video src="'+u+'" controls playsinline preload="metadata"></video>';
-else{w.innerHTML='<img loading="lazy" decoding="async" alt="" src="'+u+'">';(function(im){im.onload=function(){im.classList.add('ok')};if(im.complete)im.classList.add('ok')})(w.firstChild);w.firstChild.addEventListener('click',function(){lbx.firstChild.src=u;lbx.classList.add('on')})}
+f.forEach(function(x,n){var w=document.createElement('div');w.className='cn';var u=folder+'/'+encodeURIComponent(x.name);
+var lab=folder.indexOf('behind')>-1?'Behind the scenes photo':'Photo from a scene',alt=x.name.replace(/\.[^.]+$/,'').replace(/[-_]+/g,' ').replace(/^\d+\s*/,'').trim();
+if(!alt||/^(img|dsc|dscn|pxl|image|photo|screenshot|vid|mvimg)?\s*\d[\d\s]*$/i.test(alt))alt=lab+' '+(n+1);
+if(/\.(mp4|webm)$/i.test(x.name))w.innerHTML='<video src="'+u+'" controls playsinline preload="metadata" aria-label="'+alt+'"></video>';
+else{w.innerHTML='<img loading="lazy" decoding="async" alt="" src="'+u+'">';w.firstChild.alt=alt;w.firstChild.tabIndex=0;w.firstChild.setAttribute('role','button');(function(im){im.onload=function(){im.classList.add('ok')};if(im.complete)im.classList.add('ok')})(w.firstChild);function openIt(){lbx.firstChild.src=u;lbx.firstChild.alt=alt;lbx.classList.add('on')}w.firstChild.addEventListener('click',openIt);w.firstChild.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openIt()}})}
 el.appendChild(w)})}).catch(function(){})}
 
 /* team members: add or edit people here. Leave the list empty and the section stays hidden.
    Fields: name, role (optional), email (optional), links: [[label, url], ...] */
 (function(){var IG='https://www.instagram.com/',YT='https://www.youtube.com/';var TEAM=[
 {name:'Joonas Siimeon Kažjava',role:'Leader',links:[['Instagram @siimeon.kazjava',IG+'siimeon.kazjava'],['YouTube @giveyeeto',YT+'@giveyeeto']]},
-{name:'Kaily Tamm',links:[['Instagram @kaily.rahutamm',IG+'kaily.rahutamm']]},
-{name:'Artur Köller',links:[['Instagram @artur_koller',IG+'artur_koller']]}
+{name:'Kaily Tamm',role:'Co-founder',links:[['Instagram @kaily.rahutamm',IG+'kaily.rahutamm']]},
+{name:'Artur Köller',role:'Co-founder',links:[['Instagram @artur_koller',IG+'artur_koller']]},
+{name:'Olari Rüütelmaa',links:[['Instagram @olariruutelmaa',IG+'olariruutelmaa']]},
+{name:'Reekab Elmi',links:[['Instagram @reekabikkagi',IG+'reekabikkagi']]}
 ];
 var box=document.getElementById('members'),g=document.getElementById('mgrid');
 if(!box||!TEAM.length)return;
